@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { format, isToday } from "date-fns";
+import styled from "styled-components";
 
 import Tag from "../../ui/Tag";
 import Table from "../../ui/Table";
@@ -24,8 +24,8 @@ const Stacked = styled.div`
   }
 
   & span:last-child {
-    color: var(--color-grey-500);
     font-size: 1.2rem;
+    color: var(--color-grey-500);
   }
 `;
 
