@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { HiArrowDownOnSquare, HiEye } from "react-icons/hi2";
+import { HiArrowDownOnSquare, HiArrowUpOnSquare, HiEye } from "react-icons/hi2";
 import { format, isToday } from "date-fns";
 import styled from "styled-components";
 
@@ -7,6 +7,7 @@ import Tag from "../../ui/Tag";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 
+import { useCheckout } from "../check-in-out/useCheckout";
 import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
 
@@ -52,6 +53,7 @@ function BookingRow({
   },
 }) {
   const navigate = useNavigate();
+  const { checkout, isCheckingOut } = useCheckout();
 
   const statusToTagName = {
     unconfirmed: "blue",
@@ -101,6 +103,16 @@ function BookingRow({
               onClick={() => navigate(`/checkin/${bookingId}`)}
             >
               Check in
+            </Menus.Button>
+          )}
+
+          {status === "checked-in" && (
+            <Menus.Button
+              icon={<HiArrowUpOnSquare />}
+              disabled={isCheckingOut}
+              onClick={() => checkout(bookingId)}
+            >
+              Check out
             </Menus.Button>
           )}
         </Menus.List>
