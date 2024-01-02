@@ -1,23 +1,21 @@
-import styled from "styled-components";
-import { format, isToday } from "date-fns";
 import {
   HiOutlineChatBubbleBottomCenterText,
   HiOutlineCheckCircle,
   HiOutlineCurrencyDollar,
   HiOutlineHomeModern,
 } from "react-icons/hi2";
+import { format, isToday } from "date-fns";
+import styled from "styled-components";
 
-import DataItem from "../../ui/DataItem";
 import { Flag } from "../../ui/Flag";
+import DataItem from "../../ui/DataItem";
 
 import { formatDistanceFromNow, formatCurrency } from "../../utils/helpers";
 
 const StyledBookingDataBox = styled.section`
-  /* Box */
-  background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
-
+  background-color: var(--color-grey-0);
   overflow: hidden;
 `;
 
@@ -78,6 +76,7 @@ const Price = styled.div`
 
   background-color: ${(props) =>
     props.isPaid ? "var(--color-green-100)" : "var(--color-yellow-100)"};
+
   color: ${(props) =>
     props.isPaid ? "var(--color-green-700)" : "var(--color-yellow-700)"};
 
