@@ -33,18 +33,18 @@ const Icon = styled.div`
 `;
 
 const Title = styled.h5`
-  align-self: end;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  font-weight: 600;
   color: var(--color-grey-500);
+  font-size: 1.2rem;
+  font-weight: 600;
+  align-self: end;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
 `;
 
 const Value = styled.p`
   font-size: 2.4rem;
-  line-height: 1;
   font-weight: 500;
+  line-height: 1;
 `;
 
 function Stat({ icon, title, value, color }) {
